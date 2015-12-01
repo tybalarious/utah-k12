@@ -30,6 +30,7 @@ function Word(src, language) {
 }
 
 function createList() {
+	$('#spellingList').html('');
     wordList = new WordList($("#wordList").val());
     for(var i = 0; i < wordList.size(); i++) {
         $("#spellingList").append(`<div><button onclick="wordList.get(${i}).say()">Say My Word</button><input type="text" id="${i}"></div>`)
@@ -40,11 +41,11 @@ function createList() {
 function gradeMe() {
     student = [];
     for(var i = 0; i < wordList.size(); i++) {
-        student.push($(i).val());
+        student.push($("#" + i).val());
         if (student[i] == wordList.get(i).src) {
-            $(i).addClass("success")
+            $("#" + i).addClass("success").removeClass("failure")
         } else {
-            $(i).addClass("failure")
+            $("#" + i).addClass("failure").removeClass("success")
         }
     }
 }
