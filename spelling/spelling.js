@@ -30,6 +30,7 @@ function Word(src, language) {
 }
 
 function createList() {
+	$('#spellingList').html('');
     wordList = new WordList($("#wordList").val());
     for(var i = 0; i < wordList.size(); i++) {
         $("#spellingList").append(`<div><button onclick="wordList.get(${i}).say()">Say My Word</button><input type="text" id="${i}"></div>`)
