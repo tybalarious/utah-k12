@@ -1,25 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Spelling Bee</title>
-    <style>
-        .success {
-            background-color: rgba(68, 248, 0, 0.36);
-            outline-color: #00fc17;
-        }
+	<meta charset="UTF-8">
+	<title>Spelling Bee</title>
+	<style>
+		.success {
+			color: white;
+			font-weight: bolder;
+			background-color: rgba(68, 248, 0, 0.36);
+			outline-color: #00fc17;
+		}
 
-        .failure {
-            background-color: rgba(141, 3, 0, 0.79);
-            outline-color: #fc0a00;
-        }
-    </style>
+		.failure {
+			color: white;
+			font-weight: bolder;
+			background-color: rgba(141, 3, 0, 0.79);
+			outline-color: #fc0a00;
+		}
+
+		body {
+			background: url('http://cba.unl.edu/it-services/testing-center/images/testing-center-banner.jpg') no-repeat center center fixed;
+			background-size: cover;
+		}
+
+		.container {
+			text-align: center
+		}
+
+		.submit {
+			margin-bottom: 20px;
+		}
+
+		.title {
+			color: white;
+		}
+
+		button {
+			margin: 10px 10px;
+		}
+	</style>
 </head>
 <body>
-<input type="text" id="wordList">
-<button id="submitWordlist" onclick="createList()">Create List</button>
-<div id="spellingList"></div>
-<button onclick="gradeMe()">Grade Me</button>
+<div class="container">
+	<h1 class="title">Spelling Bee</h1>
+	<h3 class="title">Separate your words with just a space</h3>
+	<input type="text" id="wordList">
+	<button class="submit" id="submitWordlist" onclick="createList()">Create List</button>
+	<br/>
+	<div id="spellingList"></div>
+	<button onclick="gradeMe()">Grade Me</button>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="spelling.js"></script>
 </body>
