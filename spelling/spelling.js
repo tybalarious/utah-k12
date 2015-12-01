@@ -1,5 +1,3 @@
-
-
 function WordList(source, delimeter) {
     this.delimeter = delimeter || " ";
     this.words = source.split(this.delimeter);;
@@ -29,4 +27,24 @@ function Word(src, language) {
         return word.toUpperCase() == src.toUpperCase();
     }
 
+}
+
+function createList() {
+    wordList = new WordList($("#wordList").val());
+    for(var i = 0; i < wordList.size(); i++) {
+        $("#spellingList").append(`<div><button onclick="wordList.get(${i}).say()">Say My Word</button><input type="text" id="${i}"></div>`)
+    }
+    $("#wordList").val("");
+}
+
+function gradeMe() {
+    student = [];
+    for(var i = 0; i < wordList.size(); i++) {
+        student.push($(i).val());
+        if (student[i] == wordList.get(i).src) {
+            $(i).addClass("success")
+        } else {
+            $(i).addClass("failure")
+        }
+    }
 }

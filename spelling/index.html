@@ -2,10 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Spelling Bee</title>
+    <style>
+        .success {
+            background-color: rgba(68, 248, 0, 0.36);
+            outline-color: #00fc17;
+        }
+
+        .failure {
+            background-color: rgba(141, 3, 0, 0.79);
+            outline-color: #fc0a00;
+        }
+    </style>
 </head>
 <body>
-
-</body>
+<input type="text" id="wordList">
+<button id="submitWordlist" onclick="createList()">Create List</button>
+<div id="spellingList"></div>
+<button onclick="gradeMe()">Grade Me</button>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="spelling.js"></script>
+</body>
 </html>
